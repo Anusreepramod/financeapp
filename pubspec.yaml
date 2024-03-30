@@ -73,6 +73,8 @@ flutter:
     - assets/images/Logo.png
     - assets/images/arrow.png
     - assets/images/Swap Icon (1).png
+    - assets/images/Coin.png
+    - assets/images/QR Code.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

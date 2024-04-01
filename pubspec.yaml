@@ -75,6 +75,14 @@ flutter:
     - assets/images/Swap Icon (1).png
     - assets/images/Coin.png
     - assets/images/QR Code.png
+    - assets/images/Logo.png
+    - assets/images/QR Scan Icon.png
+    - assets/images/Frame 1.png
+    - assets/images/Frame 2.png
+    - assets/images/Frame 3.png
+    - assets/images/Gpay Icon.png
+    - assets/images/Visa Icon.png
+    - assets/images/image1.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

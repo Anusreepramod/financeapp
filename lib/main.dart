@@ -1,4 +1,7 @@
+import 'package:financeapp/CoinInfo.dart';
 import 'package:financeapp/academy.dart';
+import 'package:financeapp/buysell.dart';
+import 'package:financeapp/home.dart';
 // import 'package:financeapp/receive.dart';
 // import 'package:financeapp/send.dart';
 // import 'package:financeapp/swap.dart';
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AcademyScreen(key: key,)// Removed setting Profile as home widget
+      home: BuySellPage(key: key,)// Removed setting Profile as home widget
     );
   }
 }

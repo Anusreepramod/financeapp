@@ -1,24 +1,18 @@
-import 'package:financeapp/CoinInfo.dart';
-import 'package:financeapp/academy.dart';
-import 'package:financeapp/buysell.dart';
 import 'package:financeapp/home.dart';
-// import 'package:financeapp/receive.dart';
-// import 'package:financeapp/send.dart';
-// import 'package:financeapp/swap.dart';
 import 'package:flutter/material.dart';
-// import 'package:financeapp/settings.dart';
+
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: BuySellPage(key: key,)// Removed setting Profile as home widget
+    return const MaterialApp(
+      home:Home(),
     );
   }
 }

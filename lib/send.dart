@@ -1,3 +1,4 @@
+import 'package:financeapp/home.dart';
 import 'package:flutter/material.dart';
 
 class Send extends StatelessWidget {
@@ -10,7 +11,17 @@ class Send extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: IconButton(
-          icon: Image.asset('assets/images/Frame 5.png'),
+          icon: GestureDetector(
+                              // Wrap with GestureDetector for detecting taps
+                              onTap: () {
+                                // Navigate to BuySellPage when tapped
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Home()),
+                                );
+                              },
+                              child: Image.asset('assets/images/Frame 5.png')),
           onPressed: () {},
         ),
         title: Text(

@@ -1,3 +1,4 @@
+import 'package:financeapp/home.dart';
 import 'package:flutter/material.dart';
 class Swap extends StatelessWidget {
   const Swap({Key? key}) : super(key: key);
@@ -8,7 +9,17 @@ class Swap extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF17171F),
         leading: IconButton(
-          icon: Image.asset('assets/images/Frame 5.png'),
+          icon: GestureDetector(
+                              // Wrap with GestureDetector for detecting taps
+                              onTap: () {
+                                // Navigate to BuySellPage when tapped
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Home()),
+                                );
+                              },
+                              child: Image.asset('assets/images/Frame 5.png')),
           onPressed: () {
             // Add your onPressed action here
           },

@@ -1,13 +1,12 @@
+import 'package:financeapp/home.dart';
+import 'package:financeapp/receive.dart';
+import 'package:financeapp/send.dart';
+import 'package:financeapp/swap.dart';
 import 'package:flutter/material.dart';
 
-class CoininfoScreen extends StatefulWidget {
+class  CoininfoScreen extends StatelessWidget {
   const CoininfoScreen({Key? key}) : super(key: key);
 
-  @override
-  State<CoininfoScreen> createState() => _CoininfoScreenState();
-}
-
-class _CoininfoScreenState extends State<CoininfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,9 +42,15 @@ class _CoininfoScreenState extends State<CoininfoScreen> {
                 Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.popUntil(context, ModalRoute.withName('/'));
-                      },
+                              // Wrap with GestureDetector for detecting taps
+                              onTap: () {
+                                // Navigate to BuySellPage when tapped
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Home()),
+                                );
+                              },
                       child: const Icon(
                         Icons.keyboard_arrow_left,
                         color: Colors.white,
@@ -138,7 +143,7 @@ class _CoininfoScreenState extends State<CoininfoScreen> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                Image.asset(''),
+                Image.asset('assets/images/Graph.png'),
               ],
             ),
           ),
@@ -184,7 +189,7 @@ class _CoininfoScreenState extends State<CoininfoScreen> {
                             const SizedBox(
                               width: 10,
                             ),
-                            Image.asset(''),
+                            Image.asset('assets/images/Arrow 1 (3).png'),
                           ],
                         ),
                         const SizedBox(
@@ -266,23 +271,211 @@ class _CoininfoScreenState extends State<CoininfoScreen> {
               ),
             ],
           ),
-          const Spacer(),
-          Container(
-            height: 80,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25),
-                topRight: Radius.circular(25),
+        SizedBox(
+              height: 60,
+            ),
+            Container(
+              width: 420,
+              height: 65,
+              padding: const EdgeInsets.only(
+                top: 20,
+                left: 36,
+                right: 35,
+                bottom: 1,
               ),
-              color: Color(0xFF17171F),
-              border: Border(
-                top: BorderSide(
-                  color: Colors.white,
-                  width: 1.0,
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                border: const Border(
+                  top: BorderSide(
+                    width: 1,
+                    color: Color.fromARGB(255, 238, 238, 240),
+                  ),
                 ),
               ),
-            ),
-          ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    height: double.infinity,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/Frame 1.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              GestureDetector(
+                                onTap: () {
+                                 
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Send()),
+                                  );
+                                },
+                                child: Text(
+                                  'Send',
+                                  style: TextStyle(
+                                    color: Color(0xFFBFF5C7),
+                                    fontSize: 12,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 70),
+                        Container(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/Frame 2.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ReceiveScreen()),
+                                  );
+                                },
+                                child: Text(
+                                  'Recieve',
+                                  style: TextStyle(
+                                    color: Color(0xFFAAAAAA),
+                                    fontSize: 12,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 70),
+                        Container(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/Frame 3.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Swap()),
+                                  );
+                                },
+                                child: Text(
+                                  'Swap',
+                                  style: TextStyle(
+                                    color: Color(0xFFAAAAAA),
+                                    fontSize: 12,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 70),
+                        Container(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                       'assets/images/Frame 3 (1).png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Swap()),
+                                  );
+                                },
+                                child: Text(
+                                  'Buy',
+                                  style: TextStyle(
+                                    color: Color(0xFFAAAAAA),
+                                    fontSize: 12,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          
         ],
       ),
     );

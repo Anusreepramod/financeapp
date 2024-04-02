@@ -1,3 +1,4 @@
+import 'package:financeapp/home.dart';
 import 'package:flutter/material.dart';
 
 class comingsoon extends StatelessWidget {
@@ -21,9 +22,20 @@ class comingsoon extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.black, // Set the color of the container to white
                 ),
-                child: Image.asset(
-                  'assets/images/Frame 5.png', // Replace 'path_to_your_image' with the actual path to your image asset
-                  fit: BoxFit.cover, // Adjust the fit as needed
+                child: GestureDetector(
+                              // Wrap with GestureDetector for detecting taps
+                              onTap: () {
+                                // Navigate to BuySellPage when tapped
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Home()),
+                                );
+                              },
+                  child: Image.asset(
+                    'assets/images/Frame 5.png', // Replace 'path_to_your_image' with the actual path to your image asset
+                    fit: BoxFit.cover, // Adjust the fit as needed
+                  ),
                 ),
               ),
               Padding(
